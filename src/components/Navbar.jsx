@@ -15,7 +15,6 @@ function Navbar() {
     { label: "About", href: "#about" },
     { label: "Events", href: "/events" }, // route
     { label: "FAQ", href: "#faq" },
-    { label: "Contact Us", href: "#footer" },
   ]
 
   const handleNavClick = (e, href) => {
@@ -209,6 +208,13 @@ function Navbar() {
                     </div>
                   ))}
                 </div>
+              </div>
+
+              {/* Large decorative XYPHER */}
+              <div className="absolute bottom-6 right-4 md:bottom-8 md:right-8 pointer-events-none select-none opacity-[0.03]">
+                <span className="font-display text-[18vw] sm:text-[14vw] md:text-[10vw] lg:text-[8vw] text-[#fafaf9] tracking-[0.2em] leading-none">
+                  XYPHER
+                </span>
               </div>
             </motion.div>
           </>

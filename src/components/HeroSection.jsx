@@ -63,7 +63,7 @@ function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      id="hero" // <-- added so Navbar can scroll here
+      id="hero"
       style={{ position: "relative" }}
       className="h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]"
     >
@@ -109,7 +109,8 @@ function HeroSection() {
           transition={{ duration: 0.8 }}
         >
           <motion.h1
-            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-[#fafaf9] leading-[0.9] tracking-tight"
+            // medium: bumped up one step
+            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold text-[#fafaf9] leading-[0.85] tracking-[-0.01em]"
             initial={{ y: 100 }}
             animate={{ y: 0 }}
             transition={{
@@ -129,7 +130,7 @@ function HeroSection() {
           transition={{ duration: 0.8, delay: 0.1 }}
         >
           <motion.h1
-            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.9] tracking-tight text-[#c9a227]"
+            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold leading-[0.85] tracking-[-0.01em] text-[#c9a227]"
             initial={{ y: 100 }}
             animate={{ y: 0 }}
             transition={{
@@ -144,7 +145,7 @@ function HeroSection() {
 
         {/* Tagline */}
         <motion.p
-          className="text-base sm:text-lg md:text-xl text-[#fafaf9]/60 max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed px-4"
+          className="text-base sm:text-lg md:text-xl text-[#fafaf9]/60 max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed px-4 tracking-tight"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -168,7 +169,7 @@ function HeroSection() {
             transition={{ delay: 1.1 }}
           >
             <div className="w-2 h-2 bg-[#c9a227]/80 rounded-full animate-pulse" />
-            <span className="font-bold text-base sm:text-lg md:text-xl tracking-[0.15em] uppercase text-[#c9a227]/80 font-mono">
+            <span className="font-bold text-base sm:text-lg md:text-xl tracking-[0.12em] uppercase text-[#c9a227]/80 font-mono">
               Event Countdown
             </span>
             <div className="w-2 h-2 bg-[#c9a227]/80 rounded-full animate-pulse" />
@@ -206,7 +207,7 @@ function HeroSection() {
               >
                 <div className="relative bg-black/60 backdrop-blur-xl border border-[#c9a227]/40 rounded-2xl p-5 sm:p-6 shadow-lg group-hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <motion.div
-                    className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#fafaf9] mb-2 tracking-tight"
+                    className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#fafaf9] mb-2 tracking-tight leading-tight"
                     key={item.value}
                     initial={{ scale: 0.7, opacity: 0, rotateX: 90 }}
                     animate={{ scale: 1, opacity: 1, rotateX: 0 }}
@@ -220,7 +221,7 @@ function HeroSection() {
                   </motion.div>
 
                   <motion.span
-                    className="text-[10px] sm:text-xs lg:text-sm tracking-[0.3em] uppercase font-mono text-[#fafaf9]/70 group-hover:text-[#c9a227] transition-colors duration-300"
+                    className="text-[10px] sm:text-xs lg:text-sm tracking-[0.2em] uppercase font-mono text-[#fafaf9]/70 group-hover:text-[#c9a227] transition-colors duration-300 leading-tight"
                     whileHover={{ scale: 1.03 }}
                   >
                     {item.label}
@@ -233,7 +234,7 @@ function HeroSection() {
 
         {/* Event Info */}
         <motion.div
-          className="flex items-center justify-center gap-4 sm:gap-6 text-xs sm:text-sm text-[#fafaf9]/50"
+          className="flex items-center justify-center gap-4 sm:gap-6 text-xs sm:text-sm text-[#fafaf9]/50 tracking-tight"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.6 }}
@@ -256,7 +257,7 @@ function HeroSection() {
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
         >
-          <span className="text-[9px] sm:text-[10px] tracking-[0.3em] uppercase text-[#fafaf9]/40">
+          <span className="text-[9px] sm:text-[10px] tracking-[0.2em] uppercase text-[#fafaf9]/40">
             Scroll to explore
           </span>
           <div className="w-px h-8 sm:h-12 bg-gradient-to-b from-[#c9a227]/50 to-transparent" />
@@ -266,7 +267,7 @@ function HeroSection() {
       {/* Corner decorations */}
       <div className="absolute top-20 sm:top-24 left-4 sm:left-8 md:left-12 z-10 hidden sm:block">
         <motion.div
-          className="text-[9px] sm:text-[10px] tracking-[0.3em] uppercase text-[#fafaf9]/30 font-mono"
+          className="text-[9px] sm:text-[10px] tracking-[0.2em] uppercase text-[#fafaf9]/30 font-mono"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
@@ -277,7 +278,7 @@ function HeroSection() {
 
       <div className="absolute top-20 sm:top-24 right-4 sm:right-8 md:right-12 z-10 hidden sm:block">
         <motion.div
-          className="text-[9px] sm:text-[10px] tracking-[0.3em] uppercase text-[#fafaf9]/30 font-mono"
+          className="text-[9px] sm:text-[10px] tracking-[0.2em] uppercase text-[#fafaf9]/30 font-mono"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}

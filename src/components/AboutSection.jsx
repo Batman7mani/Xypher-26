@@ -15,7 +15,7 @@ const stats = [
   { value: "8+", label: "Events" },
   { value: "3K+", label: "Participants" },
   { value: "100+", label: "Mentors" },
-  { value: "72H", label: "Non-Stop" },
+  { value: "48H", label: "Non-Stop" },
 ]
 
 export function AboutSection() {
@@ -80,7 +80,7 @@ export function AboutSection() {
           <div className="flex items-center gap-4 sm:gap-6">
             <span className="text-[#c9a227] text-xs sm:text-sm font-mono">01</span>
             <div className="w-8 sm:w-12 h-px bg-[#c9a227]/50" />
-            <span className="text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.3em] uppercase text-[#fafaf9]/50">
+            <span className="text-xs sm:text-sm tracking-[0.18em] sm:tracking-[0.24em] uppercase text-[#fafaf9]/50">
               About
             </span>
           </div>
@@ -122,7 +122,7 @@ export function AboutSection() {
         >
           <div className="max-w-xl">
             <motion.h3
-              className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-[#fafaf9] mb-3 sm:mb-4"
+              className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-[#fafaf9] mb-3 sm:mb-4"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -131,14 +131,14 @@ export function AboutSection() {
               Ready to be part of something extraordinary?
             </motion.h3>
             <motion.p
-              className="text-sm sm:text-base text-[#fafaf9]/50 leading-relaxed"
+              className="text-sm sm:text-base md:text-lg text-[#fafaf9]/50 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              Join thousands of innovators, creators, and visionaries at the premier technical event
-              of 2026.
+              Join thousands of innovators, creators, and visionaries at the premier
+              technical event of 2026.
             </motion.p>
           </div>
 
@@ -148,7 +148,7 @@ export function AboutSection() {
             onClick={handleGoToEventsPage}
             className="group flex items-center gap-3 sm:gap-4"
           >
-            <span className="text-xs sm:text-sm tracking-widest uppercase text-[#fafaf9] group-hover:text-[#c9a227] transition-colors">
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.18em] uppercase text-[#fafaf9] group-hover:text-[#c9a227] transition-colors">
               Explore Events
             </span>
             <motion.span
@@ -173,7 +173,7 @@ function RevealText({ text, index }) {
   return (
     <div ref={ref} className="overflow-hidden mb-1 sm:mb-2 md:mb-4">
       <motion.h2
-        className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-[#fafaf9] leading-[1.1] tracking-tight"
+        className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-6xl font-bold text-[#fafaf9] leading-[1.05] tracking-tight"
         initial={{ y: "100%" }}
         animate={isInView ? { y: 0 } : { y: "100%" }}
         transition={{
@@ -249,7 +249,7 @@ function StatItem({ stat, index }) {
         <span className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold block mb-1 sm:mb-2 text-[#c9a227]">
           {displayValue}
         </span>
-        <span className="text-xs sm:text-sm tracking-[0.15em] sm:tracking-[0.2em] uppercase text-[#fafaf9]/40">
+        <span className="text-xs sm:text-sm tracking-[0.14em] sm:tracking-[0.18em] uppercase text-[#fafaf9]/40">
           {stat.label}
         </span>
       </div>

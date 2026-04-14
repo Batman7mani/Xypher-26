@@ -32,15 +32,19 @@ function IntroAnimation() {
       {/* Dramatic light sweep */}
       <motion.div
         className="absolute inset-0 z-10"
-        initial={{ background: "linear-gradient(90deg, transparent 0%, transparent 100%)" }}
+        initial={{
+          background:
+            "linear-gradient(90deg, transparent 0%, transparent 100%)",
+        }}
         animate={{
-          background: phase >= 1 
-            ? [
-                "linear-gradient(90deg, transparent 0%, rgba(201, 162, 39, 0.03) 50%, transparent 100%)",
-                "linear-gradient(90deg, transparent 0%, rgba(201, 162, 39, 0.08) 50%, transparent 100%)",
-                "linear-gradient(90deg, transparent 0%, rgba(201, 162, 39, 0.03) 50%, transparent 100%)",
-              ]
-            : "linear-gradient(90deg, transparent 0%, transparent 100%)"
+          background:
+            phase >= 1
+              ? [
+                  "linear-gradient(90deg, transparent 0%, rgba(201, 162, 39, 0.03) 50%, transparent 100%)",
+                  "linear-gradient(90deg, transparent 0%, rgba(201, 162, 39, 0.08) 50%, transparent 100%)",
+                  "linear-gradient(90deg, transparent 0%, rgba(201, 162, 39, 0.03) 50%, transparent 100%)",
+                ]
+              : "linear-gradient(90deg, transparent 0%, transparent 100%)",
         }}
         transition={{ duration: 2, times: [0, 0.5, 1] }}
       />
@@ -51,19 +55,21 @@ function IntroAnimation() {
         <motion.div
           className="relative"
           initial={{ scale: 1.5, opacity: 0 }}
-          animate={{ 
-            scale: phase >= 2 ? 1 : 1.5, 
-            opacity: phase >= 1 ? 1 : 0 
+          animate={{
+            scale: phase >= 2 ? 1 : 1.5,
+            opacity: phase >= 1 ? 1 : 0,
           }}
-          transition={{ 
-            duration: 1.2, 
+          transition={{
+            duration: 1.2,
             ease: [0.22, 1, 0.36, 1],
           }}
         >
           <motion.h1
-            className="font-display text-[15vw] sm:text-[12vw] md:text-[10vw] font-bold tracking-tighter leading-none"
-            style={{ 
-              background: "linear-gradient(180deg, #ffffff 0%, #a0a0a0 100%)",
+            // spacing changed: tracking-tighter -> tracking-tight
+            className="font-display text-[15vw] sm:text-[12vw] md:text-[10vw] font-bold tracking-tight leading-none"
+            style={{
+              background:
+                "linear-gradient(180deg, #ffffff 0%, #a0a0a0 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -71,20 +77,22 @@ function IntroAnimation() {
           >
             XYPHER
           </motion.h1>
-          
+
           {/* Year badge - slides in */}
           <motion.div
             className="absolute -right-2 sm:-right-4 md:-right-8 top-1/2 -translate-y-1/2"
             initial={{ x: 50, opacity: 0 }}
-            animate={{ 
-              x: phase >= 2 ? 0 : 50, 
-              opacity: phase >= 2 ? 1 : 0 
+            animate={{
+              x: phase >= 2 ? 0 : 50,
+              opacity: phase >= 2 ? 1 : 0,
             }}
-            transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            transition={{
+              duration: 0.6,
+              delay: 0.2,
+              ease: [0.22, 1, 0.36, 1],
+            }}
           >
-            <span 
-              className="font-display text-[5vw] sm:text-[4vw] md:text-[3vw] font-bold text-[#c9a227]"
-            >
+            <span className="font-display text-[5vw] sm:text-[4vw] md:text-[3vw] font-bold text-[#c9a227]">
               &apos;26
             </span>
           </motion.div>
@@ -98,11 +106,12 @@ function IntroAnimation() {
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
           <motion.p
-            className="text-center text-xs sm:text-sm md:text-base tracking-[0.3em] sm:tracking-[0.4em] uppercase text-[#fafaf9]/60"
+            // spacing softened
+            className="text-center text-xs sm:text-sm md:text-base tracking-[0.2em] sm:tracking-[0.25em] uppercase text-[#fafaf9]/60"
             initial={{ y: 20, opacity: 0 }}
-            animate={{ 
-              y: phase >= 3 ? 0 : 20, 
-              opacity: phase >= 3 ? 1 : 0 
+            animate={{
+              y: phase >= 3 ? 0 : 20,
+              opacity: phase >= 3 ? 1 : 0,
             }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
@@ -139,19 +148,29 @@ function IntroAnimation() {
       <motion.div
         className="absolute top-[12%] sm:top-[15%] left-4 sm:left-8 md:left-16"
         initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: phase >= 3 ? 0.5 : 0, y: phase >= 3 ? 0 : 20 }}
+        animate={{
+          opacity: phase >= 3 ? 0.5 : 0,
+          y: phase >= 3 ? 0 : 20,
+        }}
         transition={{ duration: 0.5 }}
       >
-        <span className="text-[10px] sm:text-xs tracking-[0.3em] text-[#fafaf9]/40 font-mono">MARCH 2026</span>
+        <span className="text-[10px] sm:text-xs tracking-[0.2em] text-[#fafaf9]/40 font-mono">
+          APRIL 2026
+        </span>
       </motion.div>
-      
+
       <motion.div
         className="absolute bottom-[12%] sm:bottom-[15%] right-4 sm:right-8 md:right-16"
         initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: phase >= 3 ? 0.5 : 0, y: phase >= 3 ? 0 : -20 }}
+        animate={{
+          opacity: phase >= 3 ? 0.5 : 0,
+          y: phase >= 3 ? 0 : -20,
+        }}
         transition={{ duration: 0.5 }}
       >
-        <span className="text-[10px] sm:text-xs tracking-[0.3em] text-[#fafaf9]/40 font-mono">INNOVATION CAMPUS</span>
+        <span className="text-[10px] sm:text-xs tracking-[0.2em] text-[#fafaf9]/40 font-mono">
+          Rajalakshmi Engineering College
+        </span>
       </motion.div>
     </div>
   )
