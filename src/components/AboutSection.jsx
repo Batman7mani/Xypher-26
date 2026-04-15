@@ -11,11 +11,10 @@ const revealPhrases = [
   "One unforgettable experience.",
 ]
 
+// Removed Mentors & Participants
 const stats = [
   { value: "8+", label: "Events" },
-  { value: "3K+", label: "Participants" },
-  { value: "100+", label: "Mentors" },
-  { value: "48H", label: "Non-Stop" },
+  { value: "48H", label: "Fest" },
 ]
 
 export function AboutSection() {
@@ -86,29 +85,33 @@ export function AboutSection() {
           </div>
         </motion.div>
 
-        {/* Main reveal text */}
+        {/* Main reveal text + stats side-by-side */}
         <div className="mb-20 sm:mb-28 md:mb-32 lg:mb-48">
-          {revealPhrases.map((phrase, index) => (
-            <RevealText key={index} text={phrase} index={index} />
-          ))}
-        </div>
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10 lg:gap-16">
+            {/* Text block – visually constrained */}
+            <div className="flex-1 max-w-2xl">
+              {revealPhrases.map((phrase, index) => (
+                <RevealText key={index} text={phrase} index={index} />
+              ))}
+            </div>
 
-        {/* Stats with horizontal scroll reveal */}
-        <div className="relative">
-          {/* Horizontal line */}
-          <motion.div
-            className="absolute top-0 left-0 right-0 h-px bg-[#fafaf9]/10"
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-            style={{ transformOrigin: "left" }}
-          />
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 pt-8 sm:pt-12 md:pt-16">
-            {stats.map((stat, index) => (
-              <StatItem key={stat.label} stat={stat} index={index} />
-            ))}
+            {/* Stats on the right */}
+            <div className="w-full lg:w-auto lg:min-w-[220px]">
+              {/* Horizontal line */}
+              <motion.div
+                className="h-px bg-[#fafaf9]/10"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+                style={{ transformOrigin: "left" }}
+              />
+              <div className="grid grid-cols-2 pt-8 sm:pt-12 md:pt-16">
+                {stats.map((stat, index) => (
+                  <StatItem key={stat.label} stat={stat} index={index} />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
@@ -142,20 +145,44 @@ export function AboutSection() {
             </motion.p>
           </div>
 
+          {/* Gold button with stylish animation */}
           <MagneticButton
             as="a"
             href="/events"
             onClick={handleGoToEventsPage}
-            className="group flex items-center gap-3 sm:gap-4"
+            className="group inline-flex"
           >
-            <span className="text-xs sm:text-sm font-semibold tracking-[0.18em] uppercase text-[#fafaf9] group-hover:text-[#c9a227] transition-colors">
-              Explore Events
-            </span>
-            <motion.span
-              className="w-8 sm:w-12 h-px bg-[#c9a227]"
-              whileHover={{ width: 64 }}
-              transition={{ duration: 0.3 }}
-            />
+            <motion.button
+              type="button"
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 18px 45px rgba(201, 162, 39, 0.45)",
+              }}
+              whileTap={{ scale: 0.96 }}
+              transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+              className="relative overflow-hidden px-8 sm:px-10 py-3 sm:py-3.5 rounded-full
+                         bg-[#c9a227] text-[#0d0d0d] text-xs sm:text-sm font-semibold
+                         tracking-[0.18em] uppercase flex items-center gap-3 sm:gap-4
+                         border border-[#f5e1a3]/40"
+            >
+              <span className="relative z-10 group-hover:text-[#0a0a0a] transition-colors">
+                Explore Events
+              </span>
+
+              {/* Shine sweep */}
+              <motion.span
+                className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent"
+                whileHover={{ x: "130%" }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+              />
+
+              {/* Right line accent */}
+              <motion.span
+                className="relative z-10 w-8 sm:w-10 h-px bg-[#0d0d0d]/70"
+                whileHover={{ width: 40 }}
+                transition={{ duration: 0.25 }}
+              />
+            </motion.button>
           </MagneticButton>
         </motion.div>
       </div>
@@ -239,10 +266,6 @@ function StatItem({ stat, index }) {
     >
       {index > 0 && (
         <div className="absolute left-0 top-6 sm:top-8 bottom-6 sm:bottom-8 w-px bg-[#fafaf9]/10 hidden lg:block" />
-      )}
-
-      {index >= 2 && (
-        <div className="absolute top-0 left-0 right-4 h-px bg-[#fafaf9]/10 lg:hidden" />
       )}
 
       <div className="lg:pl-8">

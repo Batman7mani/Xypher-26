@@ -3,13 +3,17 @@ import { motion, AnimatePresence } from "framer-motion"
 import { useState } from "react"
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import { useAuth } from "../context/AuthContext"
+import collegeLogo from "../logo/college.png"
+import ieeeCsLogo from "../logo/ieee_cs.png"
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const location = useLocation()
   const navigate = useNavigate()
   const { isAuthenticated, user, logout } = useAuth()
-  const isSpecialPage = ["/events", "/login", "/signup", "/register"].some(path => location.pathname.startsWith(path));
+  const isSpecialPage = ["/events", "/login", "/signup", "/register"].some(
+    (path) => location.pathname.startsWith(path)
+  )
 
   const menuItems = [
     { label: "Home", href: "#home" },
@@ -39,7 +43,7 @@ function Navbar() {
       } else {
         // Navigate to home; HomePage.jsx will handle the scroll via useEffect
         navigate("/")
-        // Small delay to ensure hash is processed if needed, 
+        // Small delay to ensure hash is processed if needed,
         // though HomePage.jsx check is sturdier.
         window.location.hash = href
       }
@@ -99,19 +103,23 @@ function Navbar() {
             )}
           </div>
 
-          {/* Center logo -> home, then hero scroll - Hidden on auth pages per user request */}
+          {/* Center logos -> home, then hero scroll - Hidden on auth pages per user request */}
           {!["/login", "/signup"].includes(location.pathname) && (
             <Link
               to="/"
               onClick={() => setTimeout(scrollToHero, 50)}
-              className="absolute left-1/2 -translate-x-1/2 flex items-baseline gap-1"
+              className="absolute left-1/2 -translate-x-1/2 flex items-center gap-4"
             >
-              <span className="font-display font-medium text-4xl md:text-5xl text-[#fafaf9] tracking-tight">
-                XYPHER
-              </span>
-              <span className="font-display font-medium text-2xl md:text-3xl text-[#c9a227]">
-                &apos;26
-              </span>
+              <img
+                src={collegeLogo}
+                alt="College logo"
+                className="h-10 md:h-12 w-auto object-contain"
+              />
+              <img
+                src={ieeeCsLogo}
+                alt="IEEE CS logo"
+                className="h-8 md:h-10 w-auto object-contain"
+              />
             </Link>
           )}
 
@@ -137,7 +145,7 @@ function Navbar() {
             ) : (
               <div className="flex items-center gap-4">
                 <span className="text-xs tracking-widest uppercase text-[#c9a227] font-medium border-r border-[#c9a227]/30 pr-4">
-                  {user?.first_name || 'Survivor'}
+                  {user?.first_name || "Survivor"}
                 </span>
                 <button
                   type="button"
@@ -237,22 +245,28 @@ function Navbar() {
                 </div>
 
                 {/* Mobile-only Auth Links */}
-                <motion.div 
+                <motion.div
                   className="mt-12 pt-8 border-t border-[#fafaf9]/10 md:hidden"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ delay: 0.5 }}>
-                  
+                  transition={{ delay: 0.5 }}
+                >
                   {!isAuthenticated ? (
                     <div className="flex flex-col gap-4">
                       <button
-                        onClick={() => { navigate("/login"); setIsMenuOpen(false); }}
+                        onClick={() => {
+                          navigate("/login")
+                          setIsMenuOpen(false)
+                        }}
                         className="text-left text-lg tracking-[0.1em] uppercase text-[#fafaf9]/70 hover:text-[#c9a227]"
                       >
                         Login
                       </button>
                       <button
-                        onClick={() => { navigate("/signup"); setIsMenuOpen(false); }}
+                        onClick={() => {
+                          navigate("/signup")
+                          setIsMenuOpen(false)
+                        }}
                         className="text-left text-lg tracking-[0.1em] uppercase text-[#c9a227] font-bold"
                       >
                         Sign up
@@ -261,11 +275,18 @@ function Navbar() {
                   ) : (
                     <div className="flex flex-col gap-4">
                       <div className="flex flex-col">
-                        <span className="text-[#c9a227] text-[10px] uppercase tracking-widest mb-1">Authenticated as</span>
-                        <span className="text-[#fafaf9] text-xl font-display">{user?.first_name} {user?.last_name}</span>
+                        <span className="text-[#c9a227] text-[10px] uppercase tracking-widest mb-1">
+                          Authenticated as
+                        </span>
+                        <span className="text-[#fafaf9] text-xl font-display">
+                          {user?.first_name} {user?.last_name}
+                        </span>
                       </div>
                       <button
-                        onClick={() => { logout(); setIsMenuOpen(false); }}
+                        onClick={() => {
+                          logout()
+                          setIsMenuOpen(false)
+                        }}
                         className="text-left text-lg tracking-[0.1em] uppercase text-red-500/80 hover:text-red-500 font-medium"
                       >
                         Logout

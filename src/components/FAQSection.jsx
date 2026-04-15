@@ -3,24 +3,36 @@ import { motion, useInView } from "framer-motion"
 
 const faqData = [
   {
-    question: "What is Xypher'26?",
-    answer: "Xypher'26 is a premier technical fest bringing together innovators, developers, and tech enthusiasts for workshops, hackathons, and competitions that push the boundaries of technology."
+    question: "What is XYPHER'26?",
+    answer: "XYPHER'26 is a 2-day technical fest organized by the IEEE Computer Society Student Chapter of Rajalakshmi Engineering College, featuring competitions, workshops, and hands-on technical events."
   },
   {
-    question: "Who can participate?",
-    answer: "The event is open to all students, professionals, and tech enthusiasts. Whether you're a beginner or an expert, there's something for everyone at Xypher'26."
+    question: "Who can participate in XYPHER'26?",
+    answer: "All undergraduate students from any department and any college are eligible to participate."
   },
   {
-    question: "What events are included?",
-    answer: "We feature hackathons, coding competitions, technical workshops, guest lectures from industry experts, project exhibitions, and networking sessions."
+    question: "Is the event online or offline?",
+    answer: "XYPHER'26 will be conducted in offline mode at Rajalakshmi Engineering College."
   },
   {
-    question: "How do I register?",
-    answer: "Registration is simple. Click the register button on our website, fill in your details, select your preferred events, and complete the payment process."
+    question: "What events are included in the fest?",
+    answer: "The fest includes: Capture The Flag (CTF), Building UI Blindfolded, Project Expo, Mystery Tech Auction, Technical Treasure Hunt, App Development, Workshops on Power BI & DevOps."
   },
   {
-    question: "Are there any prizes?",
-    answer: "Yes! We have exciting prizes worth over $50,000 including cash rewards, internship opportunities, tech gadgets, and certificates for all participants."
+    question: "What is the team size for events?",
+    answer: "Team size varies depending on the event, typically ranging from 2 to 4 members per team."
+  },
+  {
+    question: "What are the registration fees?",
+    answer: "Registration fees vary by event: IEEE Members: Lower fees (₹125–₹250 per team), Non-IEEE Participants: ₹150–₹300 per team, Some workshops are free for IEEE members."
+  },
+  {
+    question: "Will there be prizes and certificates?",
+    answer: "Yes! Winners will receive cash prizes (up to ₹6000), All participants will receive certificates."
+  },
+  {
+    question: "When will the event take place?",
+    answer: "XYPHER'26 is scheduled on 28th & 29th April 2026."
   }
 ]
 

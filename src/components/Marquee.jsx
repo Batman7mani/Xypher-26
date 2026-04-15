@@ -1,16 +1,14 @@
 import { motion } from "framer-motion"
 
 const items = [
-  "HACKATHONS",
-  "WORKSHOPS", 
-  "TECH TALKS",
-  "NETWORKING",
-  "COMPETITIONS",
-  "INNOVATION",
-  "CODING",
-  "AI/ML",
-  "WEB3",
-  "ROBOTICS",
+  "CTF",
+  "UI BLINDFOLD", 
+  "PROJECT EXPO",
+  "POWER BI",
+  "MYSTERY TECH AUCTION",
+  "TECHNICAL TREASURE HUNT",
+  "APP DEVELOPEMNT",
+  "DEVOPS",
 ]
 
 function Marquee() {

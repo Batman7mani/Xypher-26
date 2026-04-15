@@ -1,11 +1,14 @@
-import { useRef, useEffect, useState } from "react"
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion"
-import MagneticButton from "./MagneticButton"
+import { useRef, useEffect, useState } from "react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import MagneticButton from "./MagneticButton";
 
 function HeroSection() {
-  const sectionRef = useRef(null)
-  const scrollProgress = useMotionValue(0)
-  const smoothProgress = useSpring(scrollProgress, { stiffness: 100, damping: 30 })
+  const sectionRef = useRef(null);
+  const scrollProgress = useMotionValue(0);
+  const smoothProgress = useSpring(scrollProgress, {
+    stiffness: 100,
+    damping: 30,
+  });
 
   // Countdown state
   const [timeLeft, setTimeLeft] = useState({
@@ -13,52 +16,50 @@ function HeroSection() {
     hours: 0,
     minutes: 0,
     seconds: 0,
-  })
+  });
 
-  const targetDate = new Date("2026-04-28T09:00:00").getTime()
+  const targetDate = new Date("2026-04-28T09:00:00").getTime();
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!sectionRef.current) return
-      const rect = sectionRef.current.getBoundingClientRect()
-      const sectionHeight = sectionRef.current.offsetHeight
-      const progress = Math.max(0, Math.min(1, -rect.top / sectionHeight))
-      scrollProgress.set(progress)
-    }
+      if (!sectionRef.current) return;
+      const rect = sectionRef.current.getBoundingClientRect();
+      const sectionHeight = sectionRef.current.offsetHeight;
+      const progress = Math.max(0, Math.min(1, -rect.top / sectionHeight));
+      scrollProgress.set(progress);
+    };
 
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    handleScroll()
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
 
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [scrollProgress])
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [scrollProgress]);
 
   // Countdown timer effect
   useEffect(() => {
     const interval = setInterval(() => {
-      const now = new Date().getTime()
-      const difference = targetDate - now
+      const now = new Date().getTime();
+      const difference = targetDate - now;
 
       if (difference > 0) {
         setTimeLeft({
           days: Math.floor(difference / (1000 * 60 * 60 * 24)),
           hours: Math.floor(
-            (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+            (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
           ),
-          minutes: Math.floor(
-            (difference % (1000 * 60 * 60)) / (1000 * 60)
-          ),
+          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
           seconds: Math.floor((difference % (1000 * 60)) / 1000),
-        })
+        });
       }
-    }, 1000)
+    }, 1000);
 
-    return () => clearInterval(interval)
-  }, [])
+    return () => clearInterval(interval);
+  }, []);
 
-  const videoScale = useTransform(smoothProgress, [0, 1], [1, 1.2])
-  const overlayOpacity = useTransform(smoothProgress, [0, 0.5], [0.4, 0.8])
-  const contentY = useTransform(smoothProgress, [0, 1], [0, 150])
-  const contentOpacity = useTransform(smoothProgress, [0, 0.5], [1, 0])
+  const videoScale = useTransform(smoothProgress, [0, 1], [1, 1.2]);
+  const overlayOpacity = useTransform(smoothProgress, [0, 0.5], [0.4, 0.8]);
+  const contentY = useTransform(smoothProgress, [0, 1], [0, 150]);
+  const contentOpacity = useTransform(smoothProgress, [0, 0.5], [1, 0]);
 
   return (
     <section
@@ -101,47 +102,22 @@ function HeroSection() {
         className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 text-center pt-16 md:pt-24"
         style={{ y: contentY, opacity: contentOpacity }}
       >
-        {/* Main headline */}
-        <motion.div
-          className="overflow-hidden mb-4 sm:mb-6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
+        {/* Main headline: XYPHER'26 */}
+        <motion.h1
+          className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-bold text-[#fafaf9] leading-[0.9] tracking-[-0.02em] flex items-baseline justify-center gap-2"
+          initial={{ y: 100 }}
+          animate={{ y: 0 }}
+          transition={{
+            duration: 1,
+            ease: [0.22, 1, 0.36, 1],
+            delay: 0.2,
+          }}
         >
-          <motion.h1
-            // medium: bumped up one step
-            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold text-[#fafaf9] leading-[0.85] tracking-[-0.01em]"
-            initial={{ y: 100 }}
-            animate={{ y: 0 }}
-            transition={{
-              duration: 1,
-              ease: [0.22, 1, 0.36, 1],
-              delay: 0.2,
-            }}
-          >
-            Where Innovation
-          </motion.h1>
-        </motion.div>
-
-        <motion.div
-          className="overflow-hidden mb-6 sm:mb-8"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-        >
-          <motion.h1
-            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold leading-[0.85] tracking-[-0.01em] text-[#c9a227]"
-            initial={{ y: 100 }}
-            animate={{ y: 0 }}
-            transition={{
-              duration: 1,
-              ease: [0.22, 1, 0.36, 1],
-              delay: 0.3,
-            }}
-          >
-            Meets Excellence
-          </motion.h1>
-        </motion.div>
+          <span className="tracking-[0.02em]">XYPHER</span>
+          <span className="text-[#c9a227] text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl">
+            ’26
+          </span>
+        </motion.h1>
 
         {/* Tagline */}
         <motion.p
@@ -257,7 +233,7 @@ function HeroSection() {
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
         >
-          <span className="text-[9px] sm:text-[10px] tracking-[0.2em] uppercase text-[#fafaf9]/40">
+          <span className="text-[9px] sm:text[10px] tracking-[0.2em] uppercase text-[#fafaf9]/40">
             Scroll to explore
           </span>
           <div className="w-px h-8 sm:h-12 bg-gradient-to-b from-[#c9a227]/50 to-transparent" />
@@ -287,7 +263,7 @@ function HeroSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
 
-export default HeroSection
+export default HeroSection;
