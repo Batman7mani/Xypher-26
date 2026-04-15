@@ -18,12 +18,12 @@ const events = [
   {
     number: "I",
     label: "CTF",
-    title: "Cyber CTF",
+    title: "FlagHunt",
     slug: "capture-the-flag",
     image: imgCTF,
     registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSfVfxLJVc-Ia81gW786U3keFK4BudD9xgqg2jGy8L82u_C3vQ/viewform?usp=publish-editor",
     description: "Hack, decode, and conquer — a Jeopardy-style cybersecurity showdown. Dive deep into exploitation, crypto, and forensics to claim the digital throne.",
-    detailTitle: "Capture The Flag",
+    detailTitle: "FlagHunt",
     detailDescription: "A high-intensity cybersecurity competition where teams race to solve challenges across Web Exploitation, Cryptography, Digital Forensics, Reverse Engineering, and OSINT. Hosted on a live CTFd platform with a real-time leaderboard, each flag you capture climbs you closer to victory.",
     detailTagline: "\"Can you hack your way to the top?\"",
     details: [
@@ -65,12 +65,12 @@ const events = [
   {
     number: "II",
     label: "Technical",
-    title: "BlindSpeak UI",
+    title: "UI Whisper",
     slug: "building-ui-blindfolded",
     image: imgUIBlindfold,
     registrationLink: "https://forms.gle/MRWPmbLiPHK2ToZD8",
     description: "One designs, one codes blind — the ultimate designer-developer communication test. Bridge the gap between vision and code without sight.",
-    detailTitle: "BlindSpeak UI",
+    detailTitle: "UI Whisper",
     detailDescription: "A unique multi-stage challenge that puts designer-developer communication to the test. Teams receive a mystery prompt — the Designer creates a UI in Figma, then verbally guides the Coder to build it without ever seeing the design. Judges compare the original Figma design against the final coded output.",
     detailTagline: "\"Can you build what you can't see?\"",
     details: [
@@ -113,12 +113,12 @@ const events = [
   {
     number: "III",
     label: "Technical",
-    title: "Project Expo",
+    title: "Xhibit",
     slug: "project-expo",
     image: imgProjectExpo,
     registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSd-D_66mQ5i201Ukb4e6cdMEQLvD5zl83aj6SfmE9_JGYBl-w/viewform?usp=publish-editor",
     description: "Present your innovative projects to expert judges in a live exhibition. Showcase your engineering prowess and turn prototypes into real-world solutions.",
-    detailTitle: "Project Expo",
+    detailTitle: "Xhibit",
     detailDescription: "A platform to showcase your best technical work — from AI models and IoT prototypes to web apps and social-impact solutions. Set up your project at an exhibition stall, demonstrate it live to a panel of judges, and compete for the top spot based on innovation, complexity, and real-world applicability.",
     detailTagline: "\"Your ideas deserve the spotlight.\"",
     details: [
@@ -158,12 +158,12 @@ const events = [
   {
     number: "IV",
     label: "Workshop",
-    title: "DataDemon: Power BI",
+    title: "Data Prism",
     slug: "power-bi-workshop",
     image: imgPowerBI,
     registrationLink: "https://forms.gle/6JTEEHFwAseyNN2z7",
     description: "Transform raw data into stunning interactive dashboards — hands-on with Power BI. Learn the art of data storytelling and business intelligence.",
-    detailTitle: "DataDemon: Power BI Workshop",
+    detailTitle: "Data Prism",
     detailDescription: "A beginner-friendly, hands-on workshop where you'll learn to import, clean, and transform real-world datasets into professional interactive dashboards using Microsoft Power BI. From bar charts and KPI cards to slicers and themes — walk out with a complete dashboard you built yourself.",
     detailTagline: "\"Turn data into decisions.\"",
     details: [
@@ -196,12 +196,12 @@ const events = [
   {
     number: "V",
     label: "Technical",
-    title: "Mystery Tech Auction",
+    title: "Build & Bid",
     slug: "mystery-tech-auction",
     image: imgTechAuction,
     registrationLink: "https://forms.gle/7fHUUoQ4BHJdjTuz5",
     description: "Bid on resources, strategize under budget, and build a working prototype. Experience the high-stakes pressure of an engineering startup auction.",
-    detailTitle: "Mystery Tech Auction",
+    detailTitle: "Build & Bid",
     detailDescription: "Step into the shoes of a startup engineer with limited funding. Bid in a live auction to acquire APIs, datasets, UI frameworks, and tools — then use only what you've purchased to build a functional prototype. Strategic resource selection meets rapid development in this one-of-a-kind challenge.",
     detailTagline: "\"Build smart, not big.\"",
     details: [
@@ -244,12 +244,12 @@ const events = [
   {
     number: "VI",
     label: "Technical",
-    title: "Treasure Hunt",
+    title: "LogiX",
     slug: "technical-treasure-hunt",
     image: imgTreasureHunt,
     registrationLink: "https://forms.gle/dZaouRRVqjw868bi9",
     description: "Decode technical clues, crack puzzles, and race through stages to win. A high-speed pursuit of knowledge through the landscape of computer science.",
-    detailTitle: "Technical Treasure Hunt",
+    detailTitle: "LogiX",
     detailDescription: "A multi-stage adventure that blends CS fundamentals with puzzle-solving. Each clue you crack — from code output predictions and cipher-encoded messages to QR codes and binary riddles — reveals the next stage. Work as a team, think fast, and be the first to reach the final challenge.",
     detailTagline: "\"Follow the clues. Claim the treasure.\"",
     details: [
@@ -288,12 +288,12 @@ const events = [
   {
     number: "VII",
     label: "Technical",
-    title: "App Development",
+    title: "App-o-calypse",
     slug: "app-development",
     image: imgAppDev,
     registrationLink: "https://docs.google.com/forms/d/19xHsPJZJdFFUSZSvdQybdFxynG7OkYiHnRibJ1DGLEI/viewform",
     description: "Tackle a real-world problem statement and build a working app from scratch. Show your ability to engineer impact through mobile and web tech.",
-    detailTitle: "App Development – Build Real, Solve Real",
+    detailTitle: "App-o-calypse",
     detailDescription: "You'll receive a real-world problem statement — then ideate, design, develop, and demo a functional web or mobile application within the time limit. Whether it's HTML/CSS, Flutter, or Node.js, show the judges your ability to turn an idea into a working product under pressure.",
     detailTagline: "\"Code it. Ship it. Own it.\"",
     details: [
@@ -332,12 +332,12 @@ const events = [
   {
     number: "VIII",
     label: "Workshop",
-    title: "DevOps Workshop",
+    title: "Code2Cloud",
     slug: "devops-workshop",
     image: imgDevOps,
     registrationLink: "https://forms.gle/79JXPLYAfu6xYR2L6",
     description: "From code to deployment — get hands-on with Git, CI/CD, and Docker. Master the tools that power modern software delivery and infrastructure.",
-    detailTitle: "DevOps Workshop – Build, Automate, Deploy",
+    detailTitle: "Code2Cloud",
     detailDescription: "A beginner-friendly, hands-on workshop that walks you through the complete DevOps lifecycle. Learn Git & GitHub, set up CI/CD pipelines with GitHub Actions, get introduced to Docker, and deploy a sample application — all in one session. No prior DevOps experience needed.",
     detailTagline: "\"From Code to Deployment — End-to-End.\"",
     details: [
@@ -374,7 +374,6 @@ const events = [
     ],
   },
 ]
-
 
 const EventSection = () => {
   const [selectedEvent, setSelectedEvent] = useState(null)
