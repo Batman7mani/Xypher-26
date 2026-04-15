@@ -152,10 +152,10 @@ function Navbar({ forceScrolled, onBack }) {
                   onClick={() => setTimeout(scrollToHero, 50)}
                   className="flex items-center gap-1 group"
                 >
-                  <span className="font-display text-3xl md:text-5xl font-bold text-[#fafaf9] tracking-tighter transition-all group-hover:text-primary group-hover:drop-shadow-[0_0_10px_rgba(201,162,39,0.3)]">
+                  <span className="font-display text-3xl md:text-5xl font-bold text-[#fafaf9] tracking-widest transition-all group-hover:text-primary group-hover:drop-shadow-[0_0_10px_rgba(201,162,39,0.3)]">
                     XYPHER
                   </span>
-                  <span className="font-display text-3xl md:text-5xl font-bold text-primary tracking-tighter drop-shadow-[0_0_8px_rgba(201,162,39,0.2)]">
+                  <span className="font-display text-3xl md:text-5xl font-bold text-primary tracking-widest drop-shadow-[0_0_8px_rgba(201,162,39,0.2)]">
                     ’26
                   </span>
                 </Link>
