@@ -303,11 +303,17 @@ const EventDetail = ({ event, onBack }) => {
                 transition={{ delay: 0.8, duration: 0.5 }}>
 
                 {!userRegistration && (
-                  <button
-                    onClick={() => navigate('/register?event=' + event.slug)}
-                    className="flex items-center gap-3 bg-primary text-black px-10 py-3 rounded-full font-display uppercase tracking-[0.2em] text-sm hover:brightness-110 transition-all font-bold shadow-[0_0_20px_rgba(201,162,39,0.3)]">
-                    Register Now
-                  </button>
+                <button
+                  onClick={() => {
+                    if (event.registrationLink && event.registrationLink !== '#') {
+                      window.open(event.registrationLink, '_blank');
+                    } else {
+                      alert("Registration for this specific event will open shortly. Stay tuned!");
+                    }
+                  }}
+                  className="flex items-center gap-3 bg-primary text-black px-10 py-3 rounded-full font-display uppercase tracking-[0.2em] text-sm hover:brightness-110 transition-all font-bold shadow-[0_0_20px_rgba(201,162,39,0.3)]">
+                  Register Now
+                </button>
                 )}
 
                 <button

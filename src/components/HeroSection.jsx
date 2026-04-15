@@ -236,15 +236,6 @@ function HeroSection() {
           >
             Explore Events
           </MagneticButton>
-          <MagneticButton
-            as="a"
-            href="https://xypher-fest.netlify.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-8 py-3 bg-[#c9a227] text-[#0a0a0a] font-display font-bold uppercase tracking-[0.2em] text-sm rounded-full hover:bg-[#f4cf4a] transition-colors shadow-[0_0_30px_rgba(201,162,39,0.3)] hover:shadow-[0_0_40px_rgba(201,162,39,0.5)]"
-          >
-            Register Now
-          </MagneticButton>
         </motion.div>
       </motion.div>
 
