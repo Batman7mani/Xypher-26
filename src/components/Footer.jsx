@@ -102,7 +102,7 @@ function Footer() {
                   ease: "easeInOut"
                 }}
               >
-                COUNT DOWN STARTS
+                COUNT DOWN STARTED
               </motion.div>
               <div className="flex items-center justify-center mt-2">
                 <motion.span

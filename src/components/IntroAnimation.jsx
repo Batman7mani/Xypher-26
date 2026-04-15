@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 
 function IntroAnimation() {
   const [phase, setPhase] = useState(0)
-  
+
   useEffect(() => {
     const timers = [
       setTimeout(() => setPhase(1), 500),
@@ -51,7 +51,7 @@ function IntroAnimation() {
 
       {/* Main logo container */}
       <div className="relative z-30 px-4">
-        {/* The X mark - dramatic reveal */}
+        {/* The XYPHER mark */}
         <motion.div
           className="relative"
           initial={{ scale: 1.5, opacity: 0 }}
@@ -65,7 +65,6 @@ function IntroAnimation() {
           }}
         >
           <motion.h1
-            // spacing changed: tracking-tighter -> tracking-tight
             className="font-display text-[15vw] sm:text-[12vw] md:text-[10vw] font-bold tracking-tight leading-none"
             style={{
               background:
@@ -80,7 +79,7 @@ function IntroAnimation() {
 
           {/* Year badge - slides in */}
           <motion.div
-            className="absolute -right-2 sm:-right-4 md:-right-8 top-1/2 -translate-y-1/2"
+            className="absolute -right-2 sm:-right-4 md:-right-8 top-1/2 -translate-y-1/2 translate-x-[0.3em]" // slightly more gap
             initial={{ x: 50, opacity: 0 }}
             animate={{
               x: phase >= 2 ? 0 : 50,
@@ -106,7 +105,6 @@ function IntroAnimation() {
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
           <motion.p
-            // spacing softened
             className="text-center text-xs sm:text-sm md:text-base tracking-[0.2em] sm:tracking-[0.25em] uppercase text-[#fafaf9]/60"
             initial={{ y: 20, opacity: 0 }}
             animate={{

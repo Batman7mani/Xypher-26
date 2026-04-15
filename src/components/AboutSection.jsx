@@ -8,7 +8,6 @@ const revealPhrases = [
   "XYPHER'26 is not just an event.",
   "It's where the future is written.",
   "Two days. Thrilling 8+ events.",
-  "One unforgettable experience.",
 ]
 
 // Removed Mentors & Participants
