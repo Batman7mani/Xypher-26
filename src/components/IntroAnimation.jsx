@@ -65,16 +65,29 @@ function IntroAnimation() {
           }}
         >
           <motion.h1
-            className="font-display text-[15vw] sm:text-[12vw] md:text-[10vw] font-bold tracking-tight leading-none"
-            style={{
-              background:
-                "linear-gradient(180deg, #ffffff 0%, #a0a0a0 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
+            className="font-display text-[15vw] sm:text-[12vw] md:text-[10vw] font-bold tracking-widest leading-none flex items-center justify-center gap-2"
           >
-            XYPHER
+            <span
+              style={{
+                background: "linear-gradient(180deg, #ffffff 0%, #a0a0a0 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              XYPHER
+            </span>
+            <span
+              style={{
+                background: "linear-gradient(180deg, #c9a227 0%, #8b6d1b 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+              className="drop-shadow-[0_0_15px_rgba(201,162,39,0.3)]"
+            >
+              ’26
+            </span>
           </motion.h1>
         </motion.div>
 
